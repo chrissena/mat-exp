@@ -5,6 +5,7 @@ import { FabMenuPlaygroundComponent } from './components/all-buttons/fab-menu/pl
 import { IconButtonPlaygroundComponent } from './components/all-buttons/icon-button/playground/icon-button-playground.component';
 import { SplitButtonPlaygroundComponent } from './components/all-buttons/split-button/playground/split-button-playground.component';
 import { LoadingIndicatorPlaygroundComponent } from './components/loading-and-progress/loading-indicator/playground/loading-indicator-playground.component';
+import { NavigationRailPlaygroundComponent } from './components/navigation/navigation-rail/playground/navigation-rail-playground.component';
 // <generator:insert-import>
 
 /**
@@ -21,5 +22,6 @@ export const PLAYGROUND_PREVIEW_REGISTRY: Record<string, Type<unknown>> = {
   'split-button': SplitButtonPlaygroundComponent,
   'fab-menu': FabMenuPlaygroundComponent,
   'loading-indicator': LoadingIndicatorPlaygroundComponent,
+  'navigation-rail': NavigationRailPlaygroundComponent,
   // <generator:insert-entry>
 };

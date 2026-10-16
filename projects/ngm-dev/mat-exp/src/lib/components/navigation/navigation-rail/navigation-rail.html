@@ -1,0 +1,29 @@
+<mat-drawer-container class="mat-exp-navigation-rail-layout" (backdropClick)="_dismiss()">
+  <mat-drawer
+    #drawer
+    class="mat-exp-navigation-rail-panel"
+    [mode]="_modal() ? 'over' : 'side'"
+    [opened]="true"
+    [attr.inert]="!expanded() && hideOnCollapse() ? '' : null"
+    [attr.aria-hidden]="!expanded() && hideOnCollapse() ? 'true' : null"
+    [disableClose]="true"
+    [autoFocus]="false"
+    [attr.role]="_modal() ? 'dialog' : null"
+    [attr.aria-modal]="_modal() ? 'true' : null"
+    [attr.aria-label]="_modal() ? ariaLabel() : null"
+  >
+    <nav #panel tabindex="-1" [attr.aria-label]="ariaLabel()" (keydown)="_onKeydown($event)">
+      <div class="mat-exp-navigation-rail-header">
+        <ng-content select="[matExpNavigationRailHeader]" />
+      </div>
+      <div class="mat-exp-navigation-rail-destinations"><ng-content /></div>
+    </nav>
+  </mat-drawer>
+  <mat-drawer-content
+    #content
+    class="mat-exp-navigation-rail-content"
+    [attr.inert]="_modal() ? '' : null"
+  >
+    <ng-content select="[matExpNavigationRailContent]" />
+  </mat-drawer-content>
+</mat-drawer-container>

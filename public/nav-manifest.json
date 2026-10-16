@@ -112,6 +112,23 @@
               "primarySymbol": ["MatExpLoadingIndicator"]
             }
           ]
+        },
+        {
+          "label": "Navigation",
+          "path": "/docs/components/navigation",
+          "order": 3,
+          "description": "Expressive components for moving between app destinations.",
+          "isSection": true,
+          "hasIndexPage": true,
+          "children": [
+            {
+              "label": "Navigation rail",
+              "path": "/docs/components/navigation/navigation-rail",
+              "order": 1,
+              "description": "Collapsed and expanded navigation, with standard and modal layouts.",
+              "primarySymbol": ["MatExpNavigationRail"]
+            }
+          ]
         }
       ]
     },
@@ -206,6 +223,13 @@
       "primarySymbol": ["MatExpLoadingIndicator"]
     },
     {
+      "label": "Navigation rail",
+      "path": "/docs/components/navigation/navigation-rail",
+      "order": 1,
+      "description": "Collapsed and expanded navigation, with standard and modal layouts.",
+      "primarySymbol": ["MatExpNavigationRail"]
+    },
+    {
       "label": "All Styles API",
       "path": "/docs/styles-api/all-styles",
       "order": 1,
@@ -230,6 +254,7 @@
     "/docs/components": "/docs/components/all-buttons",
     "/docs/components/all-buttons": "/docs/components/all-buttons/button",
     "/docs/components/loading-and-progress": "/docs/components/loading-and-progress/loading-indicator",
+    "/docs/components/navigation": "/docs/components/navigation/navigation-rail",
     "/docs/styles-api": "/docs/styles-api/all-styles",
     "/docs": "/docs/getting-started"
   }

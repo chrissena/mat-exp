@@ -13,6 +13,8 @@
 /docs/components/all-buttons/fab-menu
 /docs/components/loading-and-progress
 /docs/components/loading-and-progress/loading-indicator
+/docs/components/navigation
+/docs/components/navigation/navigation-rail
 /docs/styles-api
 /docs/styles-api/all-styles
 /docs/styles-api/all-buttons
@@ -59,6 +61,12 @@
 /docs/api/mat-exp/constants/MAT_EXP_LOADING_INDICATOR_OPTIONS
 /docs/api/mat-exp/functions/provideMatExpLoadingIndicatorOptions
 /docs/api/mat-exp/functions/injectMatExpLoadingIndicatorOptions
+/docs/api/mat-exp/constants/MAT_EXP_NAVIGATION_RAIL_OPTIONS
+/docs/api/mat-exp/functions/provideMatExpNavigationRailOptions
+/docs/api/mat-exp/interfaces/MatExpNavigationRailOptions
+/docs/api/mat-exp/components/MatExpNavigationRail
+/docs/api/mat-exp/components/MatExpNavigationRailItem
+/docs/api/mat-exp/components/MatExpNavigationRailSection
 /docs/api/mat-exp/types/MatExpButtonSizeM
 /docs/api/mat-exp/types/MatExpButtonSizeS
 /docs/api/mat-exp/types/MatExpButtonSizeL
@@ -96,3 +104,5 @@
 /docs/api/mat-exp/types/MatExpButtonGroupVariant
 /docs/api/mat-exp/types/MatExpLoadingIndicatorConfig
 /docs/api/mat-exp/types/MatExpLoadingIndicatorSpeed
+/docs/api/mat-exp/types/MatExpNavigationRailMode
+/docs/api/mat-exp/types/MatExpNavigationRailAlignment

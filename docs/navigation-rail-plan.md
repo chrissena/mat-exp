@@ -12,4 +12,4 @@ Sources reviewed on 2026-10-16:
 
 The Expressive collapsed rail replaces the baseline rail; baseline is explicitly no longer recommended. Expanded rails may be standard or modal, and may return to a collapsed rail or hide. Native Android predictive-back is platform-specific; the web dismissal contract is Escape, scrim, and menu.
 
-Critical path: library primitives → integrated playground/documentation → unit, browser/accessibility and package validation. Optional follow-up: custom GSAP layout morphs; breakpoint policy helpers (applications choose when to switch to a navigation bar); screenshot baselines beyond this component. No publishing or upstream PR is part of this task.
+Critical path: library primitives → integrated playground/documentation → unit, browser/accessibility and package validation. Expressive layout and selection motion are required in this delivery. Optional follow-up: breakpoint policy helpers (applications choose when to switch to a navigation bar); screenshot baselines beyond this component. No publishing or upstream PR is part of this task.

@@ -1,0 +1,97 @@
+<div class="controls">
+  <label
+    >Expanded layout
+    <select [ngModel]="mode()" (ngModelChange)="mode.set($event)">
+      <option value="standard">Standard</option>
+      <option value="modal">Modal</option>
+    </select>
+  </label>
+  <label
+    ><input
+      type="checkbox"
+      [ngModel]="hideOnCollapse()"
+      (ngModelChange)="hideOnCollapse.set($event)"
+    />
+    Hide when collapsed</label
+  >
+  <label
+    ><input type="checkbox" [ngModel]="centered()" (ngModelChange)="centered.set($event)" /> Center
+    destinations</label
+  >
+  <label><input type="checkbox" [ngModel]="rtl()" (ngModelChange)="rtl.set($event)" /> RTL</label>
+</div>
+<div class="example" [dir]="rtl() ? 'rtl' : 'ltr'">
+  <mat-exp-navigation-rail
+    #rail
+    [(expanded)]="expanded"
+    [mode]="mode()"
+    [hideOnCollapse]="hideOnCollapse()"
+    [alignment]="centered() ? 'center' : 'top'"
+    ariaLabel="Mailbox"
+  >
+    <div matExpNavigationRailHeader>
+      <button
+        matIconButton
+        (click)="rail.toggle()"
+        [attr.aria-expanded]="expanded()"
+        [attr.aria-label]="expanded() ? 'Collapse navigation' : 'Expand navigation'"
+      >
+        <mat-icon>{{ expanded() ? 'menu_open' : 'menu' }}</mat-icon>
+      </button>
+      <button
+        matFab
+        [extended]="expanded()"
+        class="fab"
+        aria-label="Compose message"
+        (click)="selected.set('Compose')"
+      >
+        <mat-icon>edit</mat-icon>
+        @if (expanded()) {
+          <span class="fab-label">Compose</span>
+        }
+      </button>
+    </div>
+    @for (destination of destinations; track destination.label) {
+      <button
+        matExpNavigationRailItem
+        [selected]="selected() === destination.label"
+        [badge]="destination.label === 'Inbox' ? '3' : null"
+        [attr.aria-label]="
+          destination.label === 'Inbox' ? 'Inbox, 3 unread messages' : destination.label
+        "
+        (click)="selected.set(destination.label)"
+      >
+        <mat-icon matExpNavigationRailIcon>{{ destination.icon }}</mat-icon
+        >{{ destination.label }}
+      </button>
+    }
+    <mat-exp-navigation-rail-section label="Library">
+      <button
+        matExpNavigationRailItem
+        expandedOnly
+        [selected]="selected() === 'Archive'"
+        (click)="selected.set('Archive')"
+      >
+        <mat-icon matExpNavigationRailIcon>archive</mat-icon>Archive
+      </button>
+    </mat-exp-navigation-rail-section>
+    <section matExpNavigationRailContent class="page" aria-label="Mailbox content">
+      @if (hideOnCollapse()) {
+        <button
+          matIconButton
+          aria-label="Open navigation"
+          [attr.aria-expanded]="expanded()"
+          (click)="rail.open()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+      }
+      <h3>{{ selected() }}</h3>
+      <p>Choose a destination. Expand the rail to reveal Archive.</p>
+      <div class="message">Your itinerary is ready</div>
+      <div class="message">Notes from the design review</div>
+      <div class="message">A new chapter begins</div>
+      <button matButton (click)="selected.set('Inbox')">Return to inbox</button>
+    </section>
+  </mat-exp-navigation-rail>
+</div>

@@ -717,6 +717,142 @@
     "signature": "() => MatExpLoadingIndicatorOptions",
     "returnType": "MatExpLoadingIndicatorOptions"
   },
+  "MAT_EXP_NAVIGATION_RAIL_OPTIONS": {
+    "kind": "const",
+    "value": "InjectionToken<MatExpNavigationRailOptions>"
+  },
+  "provideMatExpNavigationRailOptions": {
+    "kind": "function",
+    "signature": "(options: Partial<MatExpNavigationRailOptions> | (() => Partial<MatExpNavigationRailOptions>)) => FactoryProvider",
+    "params": [
+      {
+        "name": "options",
+        "type": "Partial<MatExpNavigationRailOptions> | (() => Partial<MatExpNavigationRailOptions>)"
+      }
+    ],
+    "returnType": "FactoryProvider"
+  },
+  "MatExpNavigationRailOptions": {
+    "kind": "interface",
+    "shape": "MatExpNavigationRailOptions",
+    "properties": [
+      {
+        "name": "mode",
+        "type": "MatExpNavigationRailMode",
+        "description": "Expanded presentation."
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "description": "Initial expansion state."
+      },
+      {
+        "name": "hideOnCollapse",
+        "type": "boolean",
+        "description": "Hide the expanded rail entirely when closed."
+      },
+      {
+        "name": "alignment",
+        "type": "MatExpNavigationRailAlignment",
+        "description": "Destination alignment."
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "description": "Accessible navigation label."
+      }
+    ]
+  },
+  "MatExpNavigationRail": {
+    "kind": "component",
+    "selector": "mat-exp-navigation-rail",
+    "inputs": [
+      {
+        "name": "expanded",
+        "type": "ModelSignal<boolean>",
+        "isModel": true,
+        "default": "false",
+        "description": "Whether the rail is expanded; supports `[(expanded)]`."
+      },
+      {
+        "name": "mode",
+        "type": "MatExpNavigationRailMode",
+        "default": "'standard'",
+        "description": "How the expanded rail relates to content."
+      },
+      {
+        "name": "hideOnCollapse",
+        "type": "boolean",
+        "default": "false",
+        "description": "Close to a hidden rail instead of the persistent collapsed rail."
+      },
+      {
+        "name": "alignment",
+        "type": "MatExpNavigationRailAlignment",
+        "default": "'top'",
+        "description": "Destination alignment."
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "default": "'Primary navigation'",
+        "description": "Accessible name of the navigation region and modal."
+      }
+    ],
+    "outputs": [],
+    "description": "Expressive navigation layout. Project destinations directly, a menu/FAB in\n`[matExpNavigationRailHeader]`, and page content in `[matExpNavigationRailContent]`."
+  },
+  "MatExpNavigationRailItem": {
+    "kind": "component",
+    "selector": "a[matExpNavigationRailItem], button[matExpNavigationRailItem]",
+    "inputs": [
+      {
+        "name": "selected",
+        "type": "boolean",
+        "default": false,
+        "description": "Mark the current destination, usually from RouterLinkActive."
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "default": false,
+        "description": "Skip a temporarily unavailable destination."
+      },
+      {
+        "name": "expandedOnly",
+        "type": "boolean",
+        "default": false,
+        "description": "Reveal a secondary destination only in the expanded rail."
+      },
+      {
+        "name": "badge",
+        "type": "string | null",
+        "default": "null",
+        "description": "Badge text; empty string displays a dot, null hides it. Describe its meaning in aria-label."
+      }
+    ],
+    "outputs": [],
+    "description": "A native link or button destination. Selection remains owned by the application's route."
+  },
+  "MatExpNavigationRailSection": {
+    "kind": "component",
+    "selector": "mat-exp-navigation-rail-section",
+    "inputs": [
+      {
+        "name": "label",
+        "type": "string",
+        "description": "Visible section heading and accessible group name."
+      },
+      {
+        "name": "expandedOnly",
+        "type": "boolean",
+        "default": true,
+        "description": "Hide this group in the collapsed rail."
+      }
+    ],
+    "outputs": [],
+    "description": "A labeled group of secondary destinations, as shown in the Expressive rail specification."
+  },
   "MatExpButtonSizeM": {
     "kind": "type",
     "shape": "export type MatExpButtonSizeM = 'm';"
@@ -866,5 +1002,15 @@
     "shape": "export type MatExpLoadingIndicatorSpeed = 'fast' | 'default' | 'slow';",
     "metaDescription": "Speed preset for the loading indicator's shape morph and rotation animation.",
     "description": "Speed preset for the `mat-exp-loading-indicator`'s shape morph and\nrotation animation. Each preset maps to one of the M3 Expressive spatial\nspring tokens:\n\n- `fast`    – Expressive fast spatial    – `cubic-bezier(0.42, 1.67, 0.21, 0.90)`, 350ms per morph step.\n- `default` – Expressive default spatial – `cubic-bezier(0.38, 1.21, 0.22, 1.00)`, 500ms per morph step.\n- `slow`    – Expressive slow spatial    – `cubic-bezier(0.39, 1.29, 0.35, 0.98)`, 650ms per morph step."
+  },
+  "MatExpNavigationRailMode": {
+    "kind": "type",
+    "shape": "export type MatExpNavigationRailMode = 'standard' | 'modal';",
+    "description": "Expanded rail placement. Standard takes layout space; modal overlays content."
+  },
+  "MatExpNavigationRailAlignment": {
+    "kind": "type",
+    "shape": "export type MatExpNavigationRailAlignment = 'top' | 'center';",
+    "description": "Placement of destinations; the menu and FAB always remain at the top."
   }
 }
