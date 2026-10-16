@@ -717,6 +717,179 @@
     "signature": "() => MatExpLoadingIndicatorOptions",
     "returnType": "MatExpLoadingIndicatorOptions"
   },
+  "MatExpProgressIndicator": {
+    "kind": "component",
+    "selector": "mat-exp-progress-indicator",
+    "inputs": [
+      {
+        "name": "variant",
+        "type": "MatExpProgressVariant",
+        "default": "'linear'",
+        "description": "Geometry."
+      },
+      {
+        "name": "showTrack",
+        "type": "boolean",
+        "default": "true",
+        "description": "Show the inactive track; disable inside buttons."
+      },
+      {
+        "name": "mode",
+        "type": "MatExpProgressMode",
+        "default": "'determinate'",
+        "description": "Known or unknown progress."
+      },
+      {
+        "name": "shape",
+        "type": "MatExpProgressShape",
+        "default": "'standard'",
+        "description": "Active track shape."
+      },
+      {
+        "name": "value",
+        "type": "number",
+        "default": 0,
+        "description": "Completed work as a percentage, clamped to 0–100; non-finite values become 0."
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "default": "'Loading'",
+        "description": "Process and content description."
+      },
+      {
+        "name": "ariaLabelledby",
+        "type": "string | null",
+        "default": "null",
+        "description": "ID of a visible label, taking precedence over ariaLabel."
+      },
+      {
+        "name": "valueText",
+        "type": "string | null",
+        "default": "null",
+        "description": "Optional human-readable progress, e.g. \"3 of 5 files\"."
+      },
+      {
+        "name": "thickness",
+        "type": "number",
+        "default": "4",
+        "description": "Active stroke width in pixels."
+      },
+      {
+        "name": "trackThickness",
+        "type": "number",
+        "default": "4",
+        "description": "Inactive stroke width in pixels."
+      },
+      {
+        "name": "gap",
+        "type": "number",
+        "default": "4",
+        "description": "Visible track separation in pixels."
+      },
+      {
+        "name": "stopSize",
+        "type": "number",
+        "default": "4",
+        "description": "Linear determinate end dot diameter; 0 requires sufficient track contrast."
+      },
+      {
+        "name": "amplitude",
+        "type": "number | null",
+        "default": "null",
+        "description": "Peak wave displacement in pixels; null selects linear 3 or circular 1.6."
+      },
+      {
+        "name": "wavelength",
+        "type": "number | null",
+        "default": "null",
+        "description": "Wave length in pixels; null selects linear 40/20 or circular 15."
+      },
+      {
+        "name": "waveSpeed",
+        "type": "number | null",
+        "default": "null",
+        "description": "Wave travel in pixels/second; null travels one wavelength/second. Zero stops wave travel."
+      },
+      {
+        "name": "diameter",
+        "type": "number | null",
+        "default": "null",
+        "description": "Circular outer diameter in pixels; null selects standard 40 or wavy 48."
+      }
+    ],
+    "outputs": [],
+    "description": "Material 3 linear and circular progress, with optional expressive waves."
+  },
+  "MatExpProgressIndicatorOptions": {
+    "kind": "interface",
+    "shape": "MatExpProgressIndicatorOptions",
+    "description": "Application defaults for progress indicators. Geometry inputs are CSS pixels.",
+    "properties": [
+      {
+        "name": "variant",
+        "type": "MatExpProgressVariant"
+      },
+      {
+        "name": "showTrack",
+        "type": "boolean",
+        "description": "Whether the inactive track is visible. Disable inside buttons."
+      },
+      {
+        "name": "mode",
+        "type": "MatExpProgressMode"
+      },
+      {
+        "name": "shape",
+        "type": "MatExpProgressShape"
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "description": "Describe the process and affected content."
+      },
+      {
+        "name": "thickness",
+        "type": "number",
+        "description": "Active stroke width."
+      },
+      {
+        "name": "trackThickness",
+        "type": "number",
+        "description": "Inactive stroke width."
+      },
+      {
+        "name": "gap",
+        "type": "number",
+        "description": "Visible separation between strokes."
+      },
+      {
+        "name": "stopSize",
+        "type": "number",
+        "description": "Linear determinate stop diameter. Set to 0 only with sufficient track contrast."
+      }
+    ]
+  },
+  "MAT_EXP_PROGRESS_INDICATOR_OPTIONS": {
+    "kind": "const",
+    "value": "InjectionToken<MatExpProgressIndicatorOptions>"
+  },
+  "provideMatExpProgressIndicatorOptions": {
+    "kind": "function",
+    "signature": "(options: Partial<MatExpProgressIndicatorOptions> | (() => Partial<MatExpProgressIndicatorOptions>)) => FactoryProvider",
+    "params": [
+      {
+        "name": "options",
+        "type": "Partial<MatExpProgressIndicatorOptions> | (() => Partial<MatExpProgressIndicatorOptions>)"
+      }
+    ],
+    "returnType": "FactoryProvider"
+  },
+  "injectMatExpProgressIndicatorOptions": {
+    "kind": "function",
+    "signature": "() => MatExpProgressIndicatorOptions",
+    "returnType": "MatExpProgressIndicatorOptions"
+  },
   "MatExpButtonSizeM": {
     "kind": "type",
     "shape": "export type MatExpButtonSizeM = 'm';"
@@ -866,5 +1039,20 @@
     "shape": "export type MatExpLoadingIndicatorSpeed = 'fast' | 'default' | 'slow';",
     "metaDescription": "Speed preset for the loading indicator's shape morph and rotation animation.",
     "description": "Speed preset for the `mat-exp-loading-indicator`'s shape morph and\nrotation animation. Each preset maps to one of the M3 Expressive spatial\nspring tokens:\n\n- `fast`    – Expressive fast spatial    – `cubic-bezier(0.42, 1.67, 0.21, 0.90)`, 350ms per morph step.\n- `default` – Expressive default spatial – `cubic-bezier(0.38, 1.21, 0.22, 1.00)`, 500ms per morph step.\n- `slow`    – Expressive slow spatial    – `cubic-bezier(0.39, 1.29, 0.35, 0.98)`, 650ms per morph step."
+  },
+  "MatExpProgressVariant": {
+    "kind": "type",
+    "shape": "export type MatExpProgressVariant = 'linear' | 'circular';",
+    "description": "Geometry of a progress indicator."
+  },
+  "MatExpProgressMode": {
+    "kind": "type",
+    "shape": "export type MatExpProgressMode = 'determinate' | 'indeterminate';",
+    "description": "Whether the amount of completed work is known."
+  },
+  "MatExpProgressShape": {
+    "kind": "type",
+    "shape": "export type MatExpProgressShape = 'standard' | 'wavy';",
+    "description": "Shape of the active track."
   }
 }

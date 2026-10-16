@@ -8,3 +8,5 @@ export * from './appearance';
 export * from './variant';
 export * from './config';
 export * from './speed';
+
+export * from './progress';

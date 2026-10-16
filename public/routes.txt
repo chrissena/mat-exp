@@ -13,6 +13,7 @@
 /docs/components/all-buttons/fab-menu
 /docs/components/loading-and-progress
 /docs/components/loading-and-progress/loading-indicator
+/docs/components/loading-and-progress/progress-indicator
 /docs/styles-api
 /docs/styles-api/all-styles
 /docs/styles-api/all-buttons
@@ -59,6 +60,11 @@
 /docs/api/mat-exp/constants/MAT_EXP_LOADING_INDICATOR_OPTIONS
 /docs/api/mat-exp/functions/provideMatExpLoadingIndicatorOptions
 /docs/api/mat-exp/functions/injectMatExpLoadingIndicatorOptions
+/docs/api/mat-exp/components/MatExpProgressIndicator
+/docs/api/mat-exp/interfaces/MatExpProgressIndicatorOptions
+/docs/api/mat-exp/constants/MAT_EXP_PROGRESS_INDICATOR_OPTIONS
+/docs/api/mat-exp/functions/provideMatExpProgressIndicatorOptions
+/docs/api/mat-exp/functions/injectMatExpProgressIndicatorOptions
 /docs/api/mat-exp/types/MatExpButtonSizeM
 /docs/api/mat-exp/types/MatExpButtonSizeS
 /docs/api/mat-exp/types/MatExpButtonSizeL
@@ -96,3 +102,6 @@
 /docs/api/mat-exp/types/MatExpButtonGroupVariant
 /docs/api/mat-exp/types/MatExpLoadingIndicatorConfig
 /docs/api/mat-exp/types/MatExpLoadingIndicatorSpeed
+/docs/api/mat-exp/types/MatExpProgressVariant
+/docs/api/mat-exp/types/MatExpProgressMode
+/docs/api/mat-exp/types/MatExpProgressShape

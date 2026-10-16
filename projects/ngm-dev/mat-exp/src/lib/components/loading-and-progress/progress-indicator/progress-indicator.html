@@ -1,0 +1,26 @@
+<svg
+  aria-hidden="true"
+  focusable="false"
+  [attr.viewBox]="'0 0 ' + _geometry().width + ' ' + _geometry().height"
+  preserveAspectRatio="none"
+>
+  <path
+    class="mat-exp-progress-track"
+    [attr.display]="showTrack() ? null : 'none'"
+    [attr.d]="_initial().track"
+    [attr.stroke-width]="_geometry().trackThickness"
+  />
+  <path
+    class="mat-exp-progress-active"
+    [attr.d]="_initial().active"
+    [attr.stroke-width]="_geometry().thickness"
+  />
+  @if (variant() === 'linear' && mode() === 'determinate' && _stop() > 0) {
+    <circle
+      class="mat-exp-progress-stop"
+      [attr.cx]="_geometry().width - _stop() / 2"
+      [attr.cy]="_geometry().height / 2"
+      [attr.r]="_stop() / 2"
+    />
+  }
+</svg>
