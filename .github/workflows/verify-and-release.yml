@@ -43,6 +43,9 @@ jobs:
           HUSKY: 0
         run: npm ci
 
+      - name: Test Claude review workflow authorization and delivery
+        run: node --test .github/scripts/test-claude-review-comment.cjs
+
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
 
